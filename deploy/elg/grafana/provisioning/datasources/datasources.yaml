@@ -1,0 +1,14 @@
+apiVersion: 1
+
+datasources:
+  - name: elasticsearch
+    type: elasticsearch
+    access: proxy
+    database: "[logstash-]YYYY.MM.DD"
+    url: http://elasticsearch:9200
+    jsonData:
+      interval: Daily
+      timeField: "@timestamp"
+      logLevelField: level
+      logMessageField: line
+      esVersion: 7.17.8

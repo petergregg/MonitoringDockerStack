@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Monitored.API",
+      "type": "docker",
+      "request": "attach",
+      "processName": "",
+      "containerName": "monitoredapi",
+      "platform": "netCore",
+      "sourceFileMap": {
+        "/src/Monitored.API": "${workspaceFolder}/Monitored.API"
+      },
+      "netCore": {
+        "debuggerPath": "/remote_debugger/vsdbg"
+      }
+    }
+  ]
+}

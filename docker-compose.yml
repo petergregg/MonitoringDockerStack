@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  monitored.api:
+    image: ${DOCKER_REGISTRY-}monitoredapi
+    build:
+      context: .
+      dockerfile: Monitored.API/Dockerfile
+    depends_on:
+     - sqldata
+
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+
+  seq:
+    image: datalust/seq:latest
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.8
+
+  grafana:
+    image: grafana/grafana-oss:latest
+    depends_on:
+      - elasticsearch
+
+  opserver:
+    image: opserver/opserver:preview1
+    depends_on:
+      - sqldata
+      - elasticsearch
