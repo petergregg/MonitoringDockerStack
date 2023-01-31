@@ -197,7 +197,7 @@
               "field": "@timestamp",
               "id": "2",
               "settings": {
-                "interval": "5m"
+                "interval": "1m"
               },
               "type": "date_histogram"
             }
@@ -474,7 +474,7 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "continuous-BlYlRd"
+            "mode": "palette-classic"
           },
           "custom": {
             "axisCenteredZero": false,
@@ -553,8 +553,8 @@
         ]
       },
       "gridPos": {
-        "h": 9,
-        "w": 12,
+        "h": 6,
+        "w": 11,
         "x": 4,
         "y": 9
       },
@@ -571,6 +571,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "9.3.2",
       "targets": [
         {
           "alias": "",
